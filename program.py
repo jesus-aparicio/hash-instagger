@@ -6,9 +6,6 @@ from PyQt5.QtWidgets import QMessageBox as alert
 from PyQt5 import QtWidgets as widgets
 from PyQt5 import QtGui as interface
 from PyQt5 import QtCore as assets
-from selenium import webdriver as Drivers
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait as Wait
 from bs4 import BeautifulSoup as soup
 import gui as form
 import sys as system
@@ -20,7 +17,7 @@ import os
 #                 STATIC REFERENCE
 # -------------------------------------------------
 
-global sys, ui, gui, hashTags, categories, types, reloading, request, requestedTopics, requestedTopicSelector
+global sys, ui, gui, hashTags, categories, types, reloading, request, requestedTopics, requestedTopicSelector, location
 
 # =================================================
 #                    STRUCTURES
@@ -393,11 +390,8 @@ def makeTypes():
     types["niche"] = Type("niche")
     types["phrase"] = Type("phrase")
 
-def reader(filename: str=str(os.path.dirname(os.path.abspath(__file__))).replace("C:/",r'C:\\').replace("/",'\\')+r"\browser.exe"):
-    # parser = soup(open("C:\\example.html"), "html.parser")
-    preferences=Options()
-    preferences.add_argument('--headless')
-    return Drivers.Chrome(executable_path=filename, options=preferences)
+def reader(filename: str):
+    return soup(open(filename).read(),features="html.parser")
 
 def getHashTagsRequested():
     global request, ui
@@ -662,44 +656,22 @@ def saveHashTags():
             alert.warning(ui.profiling, 'Error While Saving', "There was an error while saving...", alert.Ok , alert.Ok)
 
 
-def loadHashTags(decoder, filename: tuple = (str(os.path.dirname(os.path.abspath(__file__))).replace("C:/",r'C:\\').replace("/",'\\')+r"\hashtags.html",r"HTML (*.html)")):
+def loadHashTags(decoder):
     # print(filename[0])
-    global categories, hashTags, gui
+    global categories, hashTags, gui, types
     resolve = dict()
-    response = dict()
-    parser = soup(open(filename[0]).read(),features="html.parser")
-
-    for tag in parser.find_all('li'):
-        resolve[tag['id']] = HashTag(tag['id'])
-        print(resolve[tag['id']].getName())
-        for category in tag.find_all("category"):
-            print(category['id'])
 
     gui.setCursor(interface.QCursor(assets.Qt.WaitCursor))
-    with decoder() as file:
-        file.get('file:///'+filename[0])    
-        retrievedTags = file.find_elements_by_css_selector("li")    
-        for tag in retrievedTags:
-            resolve[tag.get_attribute("id")] = HashTag(tag.get_attribute("id"))
-            for category in tag.find_elements_by_css_selector("category"):
-                # print("Tag:")
-                # print(resolve[tag.get_attribute("id")].getName())
-                # print("Category:")
-                # print(category.get_attribute("id"))
-                # for key in categories.keys():
-                #     print(key)
-                if(str(category.get_attribute("id")) in categories.keys()):
-                    resolve[tag.get_attribute("id")].addCategory(categories[str(category.get_attribute("id"))],int(category.get_attribute("value")))
-                # print("Added:")
-                # print(categories[category.get_attribute("id")].getName())
-                # print("With value:")
-                # print(resolve[tag.get_attribute("id")].getCategoryIntensity(categories[category.get_attribute("id")]))
-                # print("To:")
-                # print(resolve[tag.get_attribute("id")].getName())
-            for kind in tag.find_elements_by_css_selector("type"):
-                if(str(kind.get_attribute("id")) in types.keys()):
-                    resolve[tag.get_attribute("id")].setTypeIntensity(types[str(kind.get_attribute("id"))],int(kind.get_attribute("value")))
-        file.close()
+    for tag in decoder.find_all('li'):
+        resolve[tag['id']] = HashTag(tag['id'])
+        # print(resolve[tag['id']].getName())
+        for category in tag.find_all("category"):
+            # print(category['id'])
+            if category['id'] in categories.keys():
+                resolve[tag['id']].addCategory(categories[category['id']],int(category['value']))
+            for kind in tag.find_all("type"):
+                    if kind["id"] in types.keys():
+                        resolve[tag["id"]].setTypeIntensity(types[kind["id"]],int(kind["value"]))
     hashTags = resolve
     loadHashTagsComboBoxes(resolve)
     # for key in hashTags.keys():
@@ -714,15 +686,10 @@ def loadCategories(decoder, filename: tuple = (str(os.path.dirname(os.path.abspa
     response = dict()
     # print(filename[0])
 
-    gui.setCursor(interface.QCursor(assets.Qt.WaitCursor))   
-    with decoder() as file:
-        file.get('file:///'+filename[0])
-        retrievedCategories=file.find_elements_by_css_selector("li")   
-        for category in retrievedCategories:
-            response[category.get_attribute("innerHTML")] = Category(category.get_attribute("innerHTML"))
-            # print("Created:")
-            # print("'"+response[category.get_attribute("innerHTML")].getName()+"'")
-        file.close()
+    gui.setCursor(interface.QCursor(assets.Qt.WaitCursor))
+    for tag in decoder.find_all('li'):
+        response[tag.decode_contents()] = Category(tag.decode_contents())
+        # print(resolve[tag['id']].getName())
     loadCategoriesComboBox(response)
     gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))
     categories = response  
@@ -733,7 +700,7 @@ def loadCategoriesFromFile():
 
     if(alert.question(ui.profiling, 'Reloading Categories', "Do you really want to reload all categories and lose changes?", alert.Yes | alert.No | alert.Cancel, alert.Cancel) == alert.Yes):
         gui.setCursor(interface.QCursor(assets.Qt.BusyCursor))
-        categories = loadCategories(reader,widgets.QFileDialog.getOpenFileName(gui, 'Open file', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)"))
+        categories = loadCategories(reader(widgets.QFileDialog.getOpenFileName(gui, 'Open file', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)")[0]))
         bindDisplay()
         alert.information(ui.profiling, 'Categories Reloaded', "All categories have been reloaded from file.", alert.Ok , alert.Ok)
         gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))
@@ -743,7 +710,7 @@ def loadHashTagsFromFile():
 
     if(alert.question(ui.profiling, 'Reloading Hashtags', "Do you really want to reload all hashtags and lose any current changes?", alert.Yes | alert.No | alert.Cancel, alert.Cancel) == alert.Yes):
         gui.setCursor(interface.QCursor(assets.Qt.BusyCursor))
-        hashTags = loadHashTags(reader,widgets.QFileDialog.getOpenFileName(gui, 'Open file', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)"))
+        hashTags = loadHashTags(reader(widgets.QFileDialog.getOpenFileName(gui, 'Open file', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)")[0]))
         bindDisplay()
         alert.information(ui.profiling, 'Hashtags Reloaded', "All hashtags have been refreshed from selected file.", alert.Ok , alert.Ok)
         gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))
@@ -866,6 +833,7 @@ if __name__ == "__main__":
     reloading = True
     sys = widgets.QApplication(system.argv)
     gui = widgets.QMainWindow()
+    location = str(os.path.dirname(os.path.abspath(__file__))).replace("C:/",r'C:\\').replace("/",'\\')
    
     ui = form.Ui_Dialog()    
     ui.setupUi(gui)
@@ -876,8 +844,8 @@ if __name__ == "__main__":
     makeTypes()
     attribute()
 
-    categories = loadCategories(reader)
-    hashTags = loadHashTags(reader)
+    categories = loadCategories(reader(location+r"\categories.html"))
+    hashTags = loadHashTags(reader(location+r"\hashtags.html"))
     request = Request()
 
     bindEvents()
