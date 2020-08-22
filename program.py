@@ -13,6 +13,7 @@ import gui as form
 import sys as system
 import time
 import random
+import os
 
 # =================================================
 #                 STATIC REFERENCE
@@ -391,7 +392,7 @@ def makeTypes():
     types["niche"] = Type("niche")
     types["phrase"] = Type("phrase")
 
-def reader(filename: str=r"C:\Users\Von Resme\Documents\GitHub\hash-instagger\browser.exe"):
+def reader(filename: str=r"C:\Users\Von Resme\Documents\GitHub\instagram-hashtags\browser.exe"):
     preferences=Options()
     preferences.add_argument('--headless')
     return Drivers.Chrome(executable_path=filename, options=preferences)
@@ -612,7 +613,7 @@ def saveCategories():
     if True:
         try:
         # if True:
-            fileLocation = widgets.QFileDialog.getSaveFileName(gui, 'Save as...', r'C:\\Users\Von Resme\Documents\GitHub\hash-instagger',"HTML (*.html)")
+            fileLocation = widgets.QFileDialog.getSaveFileName(gui, 'Save as...', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)")
             with open(fileLocation[0], "w", encoding="utf-8") as list:
                 data = ('<!DOCTYPE HTML><meta charset="utf-8"/><html><head><title>Categories</title></head><body><ul>')
                 for category in categories.keys():
@@ -632,7 +633,7 @@ def saveHashTags():
     if True:
         try:
         # if True:
-            fileLocation = widgets.QFileDialog.getSaveFileName(gui, 'Save as...', r'C:\\Users\Von Resme\Documents\GitHub\hash-instagger',"HTML (*.html)")
+            fileLocation = widgets.QFileDialog.getSaveFileName(gui, 'Save as...', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)")
             with open(fileLocation[0], "w", encoding="utf-8") as list:
                 data = ('<!DOCTYPE HTML><meta charset="utf-8"/><html><head><title>Hashtags</title></head><body><ul>')
                 for hashTag in hashTags.keys():
@@ -659,7 +660,7 @@ def saveHashTags():
             alert.warning(ui.profiling, 'Error While Saving', "There was an error while saving...", alert.Ok , alert.Ok)
 
 
-def loadHashTags(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitHub/hash-instagger/hashtags.html",r"HTML (*.html)")):
+def loadHashTags(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitHub/instagram-hashtags/hashtags.html",r"HTML (*.html)")):
     # print(filename[0])
     global categories, hashTags, gui
     resolve = dict()
@@ -698,7 +699,7 @@ def loadHashTags(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitH
     gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))   
     return resolve
 
-def loadCategories(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitHub/hash-instagger/categories.html",r"HTML (*.html)")):
+def loadCategories(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitHub/instagram-hashtags/categories.html",r"HTML (*.html)")):
     global categories, gui
     response = dict()
 
@@ -721,7 +722,7 @@ def loadCategoriesFromFile():
 
     if(alert.question(ui.profiling, 'Reloading Categories', "Do you really want to reload all categories and lose changes?", alert.Yes | alert.No | alert.Cancel, alert.Cancel) == alert.Yes):
         gui.setCursor(interface.QCursor(assets.Qt.BusyCursor))
-        categories = loadCategories(reader,widgets.QFileDialog.getOpenFileName(gui, 'Open file', r'C:\\Users\Von Resme\Documents\GitHub\hash-instagger',"HTML (*.html)"))
+        categories = loadCategories(reader,widgets.QFileDialog.getOpenFileName(gui, 'Open file', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)"))
         bindDisplay()
         alert.information(ui.profiling, 'Categories Reloaded', "All categories have been reloaded from file.", alert.Ok , alert.Ok)
         gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))
@@ -731,7 +732,7 @@ def loadHashTagsFromFile():
 
     if(alert.question(ui.profiling, 'Reloading Hashtags', "Do you really want to reload all hashtags and lose any current changes?", alert.Yes | alert.No | alert.Cancel, alert.Cancel) == alert.Yes):
         gui.setCursor(interface.QCursor(assets.Qt.BusyCursor))
-        hashTags = loadHashTags(reader,widgets.QFileDialog.getOpenFileName(gui, 'Open file', r'C:\\Users\Von Resme\Documents\GitHub\hash-instagger',"HTML (*.html)"))
+        hashTags = loadHashTags(reader,widgets.QFileDialog.getOpenFileName(gui, 'Open file', str(os.path.dirname(os.path.abspath(__file__))),"HTML (*.html)"))
         bindDisplay()
         alert.information(ui.profiling, 'Hashtags Reloaded', "All hashtags have been refreshed from selected file.", alert.Ok , alert.Ok)
         gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))
