@@ -4,12 +4,13 @@ This is just a simple tool written in Python 3 to generate hashtags, save them i
 Pending Improvements:
 ---------------------------------------------------------------------------------------
 - Check enabled/disabled button conditions, key errors, empty lists and zero divisions
-- Combine save categories and hashtags
-- Allow disabling typology
-- Set ammount of tags per category
-- Tooltip width and styles
-- Knapsack picking algorith
-- Remove selenium loader
-- Add a meaningful example
-- Add help file
+- Make a save model button for the request settings
+- Combine the save categories and save hashtags instances
+- Allow the users to disable the typology features
+- Allow the user to request an ammount of tags per category
+- Make better, narrower wrapped tooltips and style them
+- Add a knapsack picking algorithm and let user choose optimization method
+- Remove selenium loader or replace it with a quicker (non-executable) HTML handler
+- Add a meaningful example for the startup loading
+- Add help file that details the usage and the methods
 
