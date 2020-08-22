@@ -9,6 +9,7 @@ from PyQt5 import QtCore as assets
 from selenium import webdriver as Drivers
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait as Wait
+from bs4 import BeautifulSoup as soup
 import gui as form
 import sys as system
 import time
@@ -392,7 +393,8 @@ def makeTypes():
     types["niche"] = Type("niche")
     types["phrase"] = Type("phrase")
 
-def reader(filename: str=r"C:\Users\Von Resme\Documents\GitHub\instagram-hashtags\browser.exe"):
+def reader(filename: str=str(os.path.dirname(os.path.abspath(__file__))).replace("C:/",r'C:\\').replace("/",'\\')+r"\browser.exe"):
+    # parser = soup(open("C:\\example.html"), "html.parser")
     preferences=Options()
     preferences.add_argument('--headless')
     return Drivers.Chrome(executable_path=filename, options=preferences)
@@ -660,10 +662,18 @@ def saveHashTags():
             alert.warning(ui.profiling, 'Error While Saving', "There was an error while saving...", alert.Ok , alert.Ok)
 
 
-def loadHashTags(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitHub/instagram-hashtags/hashtags.html",r"HTML (*.html)")):
+def loadHashTags(decoder, filename: tuple = (str(os.path.dirname(os.path.abspath(__file__))).replace("C:/",r'C:\\').replace("/",'\\')+r"\hashtags.html",r"HTML (*.html)")):
     # print(filename[0])
     global categories, hashTags, gui
     resolve = dict()
+    response = dict()
+    parser = soup(open(filename[0]).read(),features="html.parser")
+
+    for tag in parser.find_all('li'):
+        resolve[tag['id']] = HashTag(tag['id'])
+        print(resolve[tag['id']].getName())
+        for category in tag.find_all("category"):
+            print(category['id'])
 
     gui.setCursor(interface.QCursor(assets.Qt.WaitCursor))
     with decoder() as file:
@@ -699,9 +709,10 @@ def loadHashTags(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitH
     gui.setCursor(interface.QCursor(assets.Qt.PointingHandCursor))   
     return resolve
 
-def loadCategories(decoder, filename: tuple = (r"C:/Users/Von Resme/Documents/GitHub/instagram-hashtags/categories.html",r"HTML (*.html)")):
+def loadCategories(decoder, filename: tuple = (str(os.path.dirname(os.path.abspath(__file__))).replace("C:/",r'C:\\').replace("/",'\\')+r"\categories.html",r"HTML (*.html)")):
     global categories, gui
     response = dict()
+    # print(filename[0])
 
     gui.setCursor(interface.QCursor(assets.Qt.WaitCursor))   
     with decoder() as file:
