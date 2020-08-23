@@ -211,12 +211,17 @@ class Request:
 
         for tag in hashTags.keys():
             value = 0
+            repeats = 0
             for category in self._categories.keys():
                 if category in hashTags[tag].getCategories():
+                    repeats += 1
                     for type in types.keys():
                         if self.getTypeIntensity(types[type]) > 0:
                             value += int(float(1+float(random.randint(0,ui.spinBoxError.value()))/100)*float(self.getTypeIntensity(types[type])))
-            self._values[tag] = int(value)
+            if repeats > 1:
+                self._values[tag] = int(float(value)/float(repeats-1))
+            else:
+                self._values[tag] = int(value)
             worth += value
             # print(value)
         for tag in self._values.keys():
@@ -244,8 +249,9 @@ class Request:
                     break
                 else:
                     tagAdded = str(max(self._values, key = lambda key: self._values[key]))
-                    self.deleteHashTag(hashTags[tagAdded])
-                    response.append(tagAdded)
+                    if self._values[tagAdded] > 0:
+                        self.deleteHashTag(hashTags[tagAdded])
+                        response.append(tagAdded)
             random.shuffle(response)
             return ' '.join(response)
     
