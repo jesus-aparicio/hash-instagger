@@ -13,3 +13,5 @@ Pending Improvements:
 - Add a meaningful example for the startup loading
 - Add help file that details the usage and the methods
 
+More info at: https://hash-instagger.com/
+
