@@ -17,7 +17,7 @@ import os
 #                 STATIC REFERENCE
 # -------------------------------------------------
 
-global sys, ui, gui, hashTags, categories, types, reloading, request, requestedTopics, requestedTopicSelector, location
+global sys, ui, gui, light, bold, hashTags, categories, types, reloading, request, requestedTopics, requestedTopicSelector, location
 
 # =================================================
 #                    STRUCTURES
@@ -372,11 +372,17 @@ def bindDisplay():
     refreshHashtagEditSelectedTopicIntensity()
     setRequestTypeIntensity()
 
-def attribute():
-    global gui
+def attribute(path: str):
+    global gui, light, bold, button
 
+    route = ''.join([path,"\\"])
+    print(route)
+    db = interface.QFontDatabase()
+    light = db.applicationFontFamilies(interface.QFontDatabase.addApplicationFont(route + "lite.ttf"))[0];
+    button = db.applicationFontFamilies(interface.QFontDatabase.addApplicationFont(route + "button.ttf"))[0];
+    bold = db.applicationFontFamilies(interface.QFontDatabase.addApplicationFont(route + "bold.otf"))[0];
     gui.setFixedSize(gui.size())
-    gui.setStyleSheet(" QToolTip{ white-space: pre ; font: 9pt ; font-family: Arial }")
+    gui.setStyleSheet(" QComboBox, QList, QPlainText, QLineEdit{ font-family: " + light + " } QLabel{ font-family: " + bold + " } QPushButton, QTabWidget{ font-family: " + button + " } QToolTip{ white-space: pre ; font: 11pt ; font-family: " + light + " } ")
 
 def makeRequestedTopicsAndSelector():
     global ui, requestedTopics, requestedTopicSelector, request
@@ -848,7 +854,7 @@ if __name__ == "__main__":
     reloading = False
 
     makeTypes()
-    attribute()
+    attribute(location)
 
     categories = loadCategories(reader(location+r"\categories.html"))
     hashTags = loadHashTags(reader(location+r"\hashtags.html"))

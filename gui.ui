@@ -35,8 +35,8 @@
     <font>
      <family>Trebuchet MS</family>
      <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="cursor">
@@ -250,9 +250,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>15</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="cursor">
@@ -280,9 +280,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>15</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -304,9 +304,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>15</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -802,9 +802,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>15</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -961,9 +961,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -985,9 +985,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -1029,7 +1029,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Trebuchet MS</family>
        <pointsize>13</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -1567,9 +1570,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -1594,9 +1597,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -1621,9 +1624,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -1695,7 +1698,7 @@
     <widget class="QLabel" name="label_29">
      <property name="geometry">
       <rect>
-       <x>123</x>
+       <x>126</x>
        <y>453</y>
        <width>85</width>
        <height>16</height>
@@ -1704,7 +1707,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1725,7 +1728,7 @@
     <widget class="QLabel" name="label_30">
      <property name="geometry">
       <rect>
-       <x>123</x>
+       <x>126</x>
        <y>471</y>
        <width>85</width>
        <height>16</height>
@@ -1734,7 +1737,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1755,7 +1758,7 @@
     <widget class="QLabel" name="label_31">
      <property name="geometry">
       <rect>
-       <x>123</x>
+       <x>126</x>
        <y>489</y>
        <width>85</width>
        <height>16</height>
@@ -1764,7 +1767,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1785,7 +1788,7 @@
     <widget class="QLabel" name="label_37">
      <property name="geometry">
       <rect>
-       <x>123</x>
+       <x>126</x>
        <y>507</y>
        <width>85</width>
        <height>16</height>
@@ -1794,7 +1797,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1815,7 +1818,7 @@
     <widget class="QLabel" name="label_38">
      <property name="geometry">
       <rect>
-       <x>123</x>
+       <x>126</x>
        <y>525</y>
        <width>85</width>
        <height>16</height>
@@ -1824,7 +1827,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1845,7 +1848,7 @@
     <widget class="QLabel" name="label_39">
      <property name="geometry">
       <rect>
-       <x>258</x>
+       <x>261</x>
        <y>489</y>
        <width>85</width>
        <height>16</height>
@@ -1854,7 +1857,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1875,7 +1878,7 @@
     <widget class="QLabel" name="label_40">
      <property name="geometry">
       <rect>
-       <x>258</x>
+       <x>261</x>
        <y>507</y>
        <width>85</width>
        <height>16</height>
@@ -1884,7 +1887,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1905,7 +1908,7 @@
     <widget class="QLabel" name="label_41">
      <property name="geometry">
       <rect>
-       <x>258</x>
+       <x>261</x>
        <y>525</y>
        <width>85</width>
        <height>16</height>
@@ -1914,7 +1917,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1935,7 +1938,7 @@
     <widget class="QLabel" name="label_42">
      <property name="geometry">
       <rect>
-       <x>258</x>
+       <x>261</x>
        <y>453</y>
        <width>85</width>
        <height>16</height>
@@ -1944,7 +1947,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1965,7 +1968,7 @@
     <widget class="QLabel" name="label_43">
      <property name="geometry">
       <rect>
-       <x>258</x>
+       <x>261</x>
        <y>471</y>
        <width>85</width>
        <height>16</height>
@@ -1974,7 +1977,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -1995,7 +1998,7 @@
     <widget class="QLabel" name="label_44">
      <property name="geometry">
       <rect>
-       <x>393</x>
+       <x>396</x>
        <y>489</y>
        <width>85</width>
        <height>16</height>
@@ -2004,7 +2007,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2025,7 +2028,7 @@
     <widget class="QLabel" name="label_45">
      <property name="geometry">
       <rect>
-       <x>393</x>
+       <x>396</x>
        <y>507</y>
        <width>85</width>
        <height>16</height>
@@ -2034,7 +2037,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2055,7 +2058,7 @@
     <widget class="QLabel" name="label_46">
      <property name="geometry">
       <rect>
-       <x>393</x>
+       <x>396</x>
        <y>525</y>
        <width>85</width>
        <height>16</height>
@@ -2064,7 +2067,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2085,7 +2088,7 @@
     <widget class="QLabel" name="label_47">
      <property name="geometry">
       <rect>
-       <x>393</x>
+       <x>396</x>
        <y>453</y>
        <width>85</width>
        <height>16</height>
@@ -2094,7 +2097,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2115,7 +2118,7 @@
     <widget class="QLabel" name="label_48">
      <property name="geometry">
       <rect>
-       <x>393</x>
+       <x>396</x>
        <y>471</y>
        <width>85</width>
        <height>16</height>
@@ -2124,7 +2127,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2145,7 +2148,7 @@
     <widget class="QLabel" name="label_49">
      <property name="geometry">
       <rect>
-       <x>525</x>
+       <x>528</x>
        <y>486</y>
        <width>85</width>
        <height>16</height>
@@ -2154,7 +2157,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2175,7 +2178,7 @@
     <widget class="QLabel" name="label_50">
      <property name="geometry">
       <rect>
-       <x>525</x>
+       <x>528</x>
        <y>504</y>
        <width>85</width>
        <height>16</height>
@@ -2184,7 +2187,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2205,7 +2208,7 @@
     <widget class="QLabel" name="label_51">
      <property name="geometry">
       <rect>
-       <x>525</x>
+       <x>528</x>
        <y>522</y>
        <width>85</width>
        <height>16</height>
@@ -2214,7 +2217,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2235,7 +2238,7 @@
     <widget class="QLabel" name="label_52">
      <property name="geometry">
       <rect>
-       <x>525</x>
+       <x>528</x>
        <y>450</y>
        <width>85</width>
        <height>16</height>
@@ -2244,7 +2247,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2265,7 +2268,7 @@
     <widget class="QLabel" name="label_53">
      <property name="geometry">
       <rect>
-       <x>525</x>
+       <x>528</x>
        <y>468</y>
        <width>85</width>
        <height>16</height>
@@ -2274,7 +2277,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2295,7 +2298,7 @@
     <widget class="QLabel" name="label_54">
      <property name="geometry">
       <rect>
-       <x>645</x>
+       <x>648</x>
        <y>486</y>
        <width>85</width>
        <height>16</height>
@@ -2304,7 +2307,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2325,7 +2328,7 @@
     <widget class="QLabel" name="label_55">
      <property name="geometry">
       <rect>
-       <x>645</x>
+       <x>648</x>
        <y>504</y>
        <width>85</width>
        <height>16</height>
@@ -2334,7 +2337,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2355,7 +2358,7 @@
     <widget class="QLabel" name="label_56">
      <property name="geometry">
       <rect>
-       <x>645</x>
+       <x>648</x>
        <y>522</y>
        <width>85</width>
        <height>16</height>
@@ -2364,7 +2367,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2385,7 +2388,7 @@
     <widget class="QLabel" name="label_57">
      <property name="geometry">
       <rect>
-       <x>645</x>
+       <x>648</x>
        <y>450</y>
        <width>85</width>
        <height>16</height>
@@ -2394,7 +2397,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2415,7 +2418,7 @@
     <widget class="QLabel" name="label_58">
      <property name="geometry">
       <rect>
-       <x>645</x>
+       <x>648</x>
        <y>468</y>
        <width>85</width>
        <height>16</height>
@@ -2424,7 +2427,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -2559,9 +2562,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -2586,9 +2589,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -2613,9 +2616,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans Unicode</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -3097,16 +3100,16 @@
     <widget class="QLabel" name="label_59">
      <property name="geometry">
       <rect>
-       <x>525</x>
+       <x>510</x>
        <y>459</y>
-       <width>85</width>
+       <width>100</width>
        <height>16</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3136,7 +3139,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3166,7 +3169,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3196,7 +3199,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3226,7 +3229,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3256,7 +3259,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3286,7 +3289,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3316,7 +3319,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3337,16 +3340,16 @@
     <widget class="QLabel" name="label_73">
      <property name="geometry">
       <rect>
-       <x>390</x>
+       <x>375</x>
        <y>480</y>
-       <width>85</width>
+       <width>100</width>
        <height>16</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3376,7 +3379,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3406,7 +3409,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3436,7 +3439,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3466,7 +3469,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3496,7 +3499,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3526,7 +3529,7 @@
      <property name="font">
       <font>
        <family>Trebuchet MS</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3681,9 +3684,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -3708,9 +3711,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -3766,9 +3769,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -3793,9 +3796,9 @@
      <property name="font">
       <font>
        <family>Lucida Sans</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
