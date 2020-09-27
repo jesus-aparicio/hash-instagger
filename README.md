@@ -7,6 +7,8 @@ Pending Improvements:
 - Make a save model button for the request settings
 - Combine the save categories and save hashtags instances
 - Allow the users to disable the typology features
+- Add a show all tags button
+- Disallow add repeated tag
 - Allow the user to request an ammount of tags per category
 - Make better, narrower wrapped tooltips and style them
 - Add a knapsack picking algorithm and let user choose optimization method
